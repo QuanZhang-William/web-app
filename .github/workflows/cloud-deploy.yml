@@ -1,9 +1,6 @@
 name: Create a release in Cloud Deploy
 
-on:
-  push:
-    branches:
-      - $default_branch
+on: [push]
 
 env:
   PROJECT_ID: gitlab-zhangquan
@@ -25,7 +22,7 @@ jobs:
         id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'projects/306223470399/locations/global/workloadIdentityPools/gitlab/providers/gitlab-gitlab'
+          workload_identity_provider: 'projects/306223470399/locations/global/workloadIdentityPools/my-pool/providers/my-provider '
           service_account: 'gitlab-service-account@gitlab-zhangquan.iam.gserviceaccount.com'
 
       - name: 'Set up Cloud SDK'
